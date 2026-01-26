@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE FISH CO | Gaming & Content</title>
+    <title>THE FISH CO | Gaming</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@400;700&display=swap');
         
-        body { 
-            background-color: #050505; 
-            color: white; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-        }
-
+        html { scroll-behavior: smooth; }
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
         .font-gaming { font-family: 'Orbitron', sans-serif; }
 
-        .glow-hop:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+        .btn-glow {
+            transition: 0.3s;
+            box-shadow: 0 0 0px rgba(59, 130, 246, 0);
         }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+            transform: scale(1.05);
+        }
+        .btn-glow:active { transform: scale(0.95); }
 
         .animated-bg {
             background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e3a8a);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
-
         @keyframes gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -38,78 +37,94 @@
 </head>
 <body>
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto relative z-10">
-        <div class="font-gaming text-2xl font-black tracking-tighter italic text-blue-500 underline decoration-white">
-            FISH CO.
-        </div>
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-black/50 backdrop-blur-md">
+        <div class="font-gaming text-2xl font-black italic text-blue-500">FISH CO.</div>
         <div class="hidden md:flex gap-8 font-bold text-sm uppercase">
-            <a href="#" class="hover:text-blue-400 transition">Videos</a>
-            <a href="#" class="hover:text-blue-400 transition">Live</a>
-            <a href="#" class="hover:text-blue-400 transition">Merch</a>
+            <a href="#videos" class="hover:text-blue-400 transition">Videos</a>
+            <a href="#about" class="hover:text-blue-400 transition">About</a>
+            <a href="https://discord.com" target="_blank" class="hover:text-blue-400 transition">Discord</a>
         </div>
-        <a href="https://youtube.com" class="bg-red-600 px-5 py-2 rounded-lg font-bold hover:bg-red-500 flex items-center gap-2">
+        <a href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE?sub_confirmation=1" 
+           target="_blank" 
+           class="bg-red-600 px-5 py-2 rounded-lg font-bold hover:bg-red-700 transition flex items-center gap-2">
             <i class="fab fa-youtube"></i> SUBSCRIBE
         </a>
     </nav>
 
-    <header class="animated-bg py-24 px-6 text-center border-b border-white/10">
+    <header class="animated-bg py-32 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="font-gaming text-6xl md:text-8xl font-black mb-4 italic tracking-tight">
-                WE'RE JUST <span class="text-blue-500">BUILT</span> DIFFERENT.
+            <h1 class="font-gaming text-6xl md:text-8xl font-black mb-4 italic tracking-tight uppercase">
+                Fear <span class="text-blue-500">The Fin</span>
             </h1>
-            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                Official hub for The Fish Company. High-stakes gameplay, daily uploads, and absolutely zero actual fish.
-            </p>
+            <p class="text-xl text-slate-300 mb-8 font-medium">No fish. Just cracked gameplay and vibes.</p>
+            
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="bg-blue-600 px-8 py-4 rounded-full font-black text-lg glow-hop">JOIN THE SQUAD</button>
-                <button class="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full font-black text-lg hover:bg-white/20 transition">LATEST CLIP</button>
+                <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="bg-blue-600 px-10 py-4 rounded-xl font-black text-lg btn-glow inline-block">
+                    JOIN THE DISCORD
+                </a>
+                <a href="#videos" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-black text-lg hover:bg-white/20 transition inline-block">
+                    WATCH CLIPS
+                </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto py-20 px-6">
-        <h2 class="font-gaming text-3xl mb-10 border-l-4 border-blue-500 pl-4">LATEST DROPS</h2>
+    <section id="videos" class="max-w-7xl mx-auto py-24 px-6">
+        <h2 class="font-gaming text-3xl mb-12 border-l-8 border-blue-600 pl-4">LATEST DROPS</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
-                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80')"></div>
-                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+            <a href="https://youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="group bg-zinc-900 rounded-3xl overflow-hidden block transition-all hover:-translate-y-2">
+                <div class="aspect-video bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800" class="object-cover w-full h-full opacity-60 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-play text-4xl text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">How we won the $10k Invitational</h3>
-                    <p class="text-slate-400 text-sm italic">240K Views • 2 days ago</p>
+                    <h3 class="font-bold text-xl group-hover:text-blue-400 transition">How we dominated the finals</h3>
+                    <p class="text-slate-500 mt-2">Click to watch on YouTube</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
-                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80')"></div>
-                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+            <a href="https://youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="group bg-zinc-900 rounded-3xl overflow-hidden block transition-all hover:-translate-y-2">
+                <div class="aspect-video bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800" class="object-cover w-full h-full opacity-60 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-play text-4xl text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">The Fish Company vs. Everyone</h3>
-                    <p class="text-slate-400 text-sm italic">1.2M Views • 1 week ago</p>
+                    <h3 class="font-bold text-xl group-hover:text-blue-400 transition">Top 10 Insane Snipes</h3>
+                    <p class="text-slate-500 mt-2">Watch the montage</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
-                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80')"></div>
-                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+            <a href="https://youtube.com/watch?v=VIDEO_ID_3" target="_blank" class="group bg-zinc-900 rounded-3xl overflow-hidden block transition-all hover:-translate-y-2">
+                <div class="aspect-video bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800" class="object-cover w-full h-full opacity-60 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-play text-4xl text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">Setup Tour: The Reef 2026</h3>
-                    <p class="text-slate-400 text-sm italic">89K Views • 3 days ago</p>
+                    <h3 class="font-bold text-xl group-hover:text-blue-400 transition">Channel Update 2026</h3>
+                    <p class="text-slate-500 mt-2">What's coming next</p>
                 </div>
-            </div>
+            </a>
         </div>
-    </main>
+    </section>
 
-    <footer class="p-10 text-center border-t border-white/5 text-slate-600 uppercase tracking-widest text-xs font-bold">
-        &copy; 2026 The Fish Company // No Fish Involved.
+    <footer id="about" class="bg-zinc-950 py-20 px-6 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="font-gaming text-4xl mb-6 text-white/20">FISH CO.</div>
+            <div class="flex justify-center gap-6 text-2xl mb-8">
+                <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-twitch"></i></a>
+            </div>
+            <p class="text-slate-500 font-bold tracking-widest text-sm">&copy; 2026 THE FISH COMPANY | GAMING DIVISION</p>
+        </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </body>
 </html>
