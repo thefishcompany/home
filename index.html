@@ -14,23 +14,27 @@
         .font-gaming { font-family: 'Orbitron', sans-serif; }
 
         .hero-title {
-            font-size: clamp(3rem, 15vw, 8rem);
-            line-height: 0.9;
+            font-size: clamp(3.5rem, 18vw, 10rem);
+            line-height: 0.85;
         }
 
-        .btn-glow {
-            transition: 0.3s;
-            box-shadow: 0 0 0px rgba(59, 130, 246, 0);
-        }
-        .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-            transform: scale(1.02);
+        /* Large Watermark Background Text */
+        .watermark {
+            position: absolute;
+            font-size: 25vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: -1;
+            white-space: nowrap;
+            pointer-events: none;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
         }
 
         .animated-bg {
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e3a8a);
+            background: linear-gradient(-45deg, #020617, #1e1b4b, #0f172a, #050505);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: gradient 20s ease infinite;
         }
         @keyframes gradient {
             0% { background-position: 0% 50%; }
@@ -38,75 +42,121 @@
             100% { background-position: 0% 50%; }
         }
 
-        .pulse-text {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        /* Continuous Scrolling Ticker */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .5; }
+        .ticker-wrap {
+            display: flex;
+            width: 200%;
+            animation: ticker 30s linear infinite;
         }
     </style>
 </head>
 <body>
 
-    <nav class="flex flex-col md:flex-row justify-between items-center p-4 md:p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-black/90 backdrop-blur-md gap-4">
-        <div class="font-gaming text-lg md:text-xl font-black italic text-blue-500 tracking-tighter uppercase">
+    <nav class="flex flex-col md:flex-row justify-between items-center p-4 md:p-8 max-w-7xl mx-auto sticky top-0 z-50 bg-black/95 backdrop-blur-xl gap-4 border-b border-white/5">
+        <div class="font-gaming text-xl font-black italic text-blue-500 tracking-tighter uppercase">
             THE FISH COMPANY
         </div>
         
-        <div class="flex items-center gap-6 font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-400">
-            <a href="#videos" class="hover:text-blue-400 transition">Videos</a>
-            <a href="#coming-soon" class="hover:text-blue-400 transition">Updates</a>
-            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-4 py-2 rounded text-white hover:bg-red-700 transition flex items-center gap-2">
-                <i class="fab fa-youtube text-sm"></i> <span class="hidden xs:inline">SUB</span>
+        <div class="flex items-center gap-8 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400">
+            <a href="#videos" class="hover:text-blue-500 transition">Media</a>
+            <a href="#mission" class="hover:text-blue-500 transition">Mission</a>
+            <a href="#coming-soon" class="hover:text-blue-500 transition">Drops</a>
+            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-5 py-2 rounded-sm text-white hover:bg-red-700 transition flex items-center gap-2">
+                <i class="fab fa-youtube"></i> SUBSCRIBE
             </a>
         </div>
     </nav>
 
-    <header class="animated-bg py-20 md:py-32 px-6 text-center border-b border-white/5">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="font-gaming hero-title font-black mb-6 italic tracking-tighter uppercase">
-                FEAR <span class="text-blue-500">THE</span><br>SALMON
+    <header class="animated-bg min-h-screen flex items-center justify-center relative px-6 py-20">
+        <div class="watermark top-20 -left-10">SALMON</div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="font-gaming hero-title font-black mb-8 italic tracking-tighter uppercase">
+                FEAR <span class="text-blue-600">THE</span><br>SALMON
             </h1>
-            <p class="text-base md:text-xl text-slate-300 mb-10 font-medium px-4">
-                No fish. Just elite gameplay.
+            <p class="text-lg md:text-2xl text-slate-400 mb-12 font-light tracking-wide max-w-2xl mx-auto">
+                Redefining the digital ecosystem through high-performance gameplay and creative chaos.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4 px-8">
-                <a href="#coming-soon" class="bg-blue-600 px-8 py-4 rounded-xl font-black text-xs md:text-sm tracking-widest btn-glow uppercase text-center">
-                    Upcoming
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#mission" class="bg-blue-600 px-12 py-5 rounded-full font-black text-sm tracking-widest hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition uppercase">
+                    Our Vision
                 </a>
-                <a href="#videos" class="bg-white/10 border border-white/20 px-8 py-4 rounded-xl font-black text-xs md:text-sm tracking-widest hover:bg-white/20 transition uppercase text-center">
-                    Latest Drops
+                <a href="#videos" class="bg-white/5 backdrop-blur-md border border-white/10 px-12 py-5 rounded-full font-black text-sm tracking-widest hover:bg-white/10 transition uppercase">
+                    Enter the Reef
                 </a>
             </div>
         </div>
+        <div class="watermark bottom-10 -right-20">EST.2026</div>
     </header>
 
-    <section id="coming-soon" class="max-w-7xl mx-auto py-16 md:py-32 px-4 md:px-6 text-center">
-        <div class="bg-zinc-900/40 p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] border border-blue-500/20 relative overflow-hidden">
-            <h2 class="font-gaming text-3xl md:text-5xl mb-4 uppercase tracking-tighter">Project <span class="text-blue-500">Omega</span></h2>
-            <p class="text-blue-400 font-gaming text-sm md:text-xl mb-6 pulse-text tracking-widest uppercase italic">Coming Soon</p>
-            <p class="text-zinc-400 max-w-xl mx-auto text-sm md:text-lg leading-relaxed">
-                We are currently overhauling the Fish Co experience. Stay tuned for new roster reveals and tournament announcements.
-            </p>
-        </div>
-    </section>
-
-    <section id="videos" class="max-w-7xl mx-auto py-12 px-6">
-        <h2 class="font-gaming text-2xl md:text-3xl mb-10 border-l-4 md:border-l-8 border-blue-600 pl-4 uppercase text-blue-500">Videos</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center text-zinc-600">
-            <div class="aspect-video bg-zinc-900 rounded-2xl overflow-hidden border border-white/5">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    <section id="mission" class="py-32 px-6 border-y border-white/5 relative bg-zinc-950">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="font-gaming text-4xl md:text-6xl font-black mb-8 italic">WE DON'T<br><span class="text-blue-500">FOLLOW.</span></h2>
+                <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+                    Fish Co isn't just a channel; it's a standard. We operate in the deep, moving faster and hitting harder than the competition.
+                </p>
             </div>
-            <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[8px] md:text-[10px] tracking-[0.2em]">Live Content Pending</div>
-            <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[8px] md:text-[10px] tracking-[0.2em]">Live Content Pending</div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-white/5">
+                    <div class="text-blue-500 font-gaming text-3xl mb-2">99%</div>
+                    <div class="text-zinc-500 text-xs uppercase tracking-widest">Precision</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-white/5">
+                    <div class="text-blue-500 font-gaming text-3xl mb-2">∞</div>
+                    <div class="text-zinc-500 text-xs uppercase tracking-widest">Energy</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-16 text-center border-t border-white/5">
-        <p class="font-gaming text-xl mb-4 text-white/10 italic tracking-tighter">FISH CO.</p>
-        <p class="text-zinc-700 font-bold text-[8px] md:text-[10px] tracking-[0.4em] uppercase">&copy; 2026 THE FISH COMPANY</p>
+    <section id="videos" class="max-w-7xl mx-auto py-32 px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <h2 class="font-gaming text-4xl md:text-5xl font-black italic uppercase">The <span class="text-blue-500">Archives</span></h2>
+            <p class="text-zinc-500 uppercase tracking-widest text-xs font-bold border-b border-blue-500 pb-2">Latest Broadcasts</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="aspect-video bg-zinc-900 rounded-lg overflow-hidden border border-white/5 hover:border-blue-500/50 transition duration-500">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/REPLACE_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="aspect-video bg-zinc-900 rounded-lg border border-dashed border-white/10 flex items-center justify-center font-gaming text-zinc-700 text-xs tracking-widest">ENCRYPTED_FILE_02</div>
+            <div class="aspect-video bg-zinc-900 rounded-lg border border-dashed border-white/10 flex items-center justify-center font-gaming text-zinc-700 text-xs tracking-widest">ENCRYPTED_FILE_03</div>
+        </div>
+    </section>
+
+    <section id="coming-soon" class="max-w-7xl mx-auto py-20 px-6">
+        <div class="bg-gradient-to-br from-blue-900/20 to-transparent p-1 md:p-px rounded-[3rem]">
+            <div class="bg-black p-12 md:p-24 rounded-[3rem] text-center">
+                <span class="text-blue-500 font-gaming tracking-[0.5em] text-xs uppercase mb-6 block">Status: Pending</span>
+                <h2 class="font-gaming text-5xl md:text-7xl font-black mb-8 italic uppercase">Project Omega</h2>
+                <p class="text-zinc-400 max-w-2xl mx-auto text-lg mb-12">
+                    A new era of content is currently being processed. Roster updates, tournament schedules, and exclusive drops are imminent.
+                </p>
+                <div class="inline-block px-8 py-3 border border-blue-500/30 rounded-full text-blue-400 font-gaming text-sm animate-pulse">
+                    SYSTEM OVERHAUL IN PROGRESS
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-zinc-900/30 border-y border-white/5 py-8 overflow-hidden">
+        <div class="ticker-wrap font-gaming text-zinc-700 text-sm tracking-[1em] uppercase">
+            <span>FISH CO // NO FISH // CRACKED GAMEPLAY // FEAR THE SALMON // </span>
+            <span>FISH CO // NO FISH // CRACKED GAMEPLAY // FEAR THE SALMON // </span>
+        </div>
+    </div>
+
+    <footer class="py-24 text-center">
+        <div class="font-gaming text-3xl mb-6 text-white/10 italic">THE FISH COMPANY</div>
+        <div class="flex justify-center gap-12 text-zinc-600 font-bold text-[10px] tracking-[0.5em] uppercase">
+            <span>2026</span>
+            <span>&copy;</span>
+            <span>All Rights Reserved</span>
+        </div>
     </footer>
 
 </body>
