@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fish Company | Premium Seafood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+        }
+        .fish-card img { height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">🐟 The Fish Company</a>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Fresh From the Ocean</h1>
+            <p class="lead">Sustainability sourced, delivered to your door.</p>
+            <a href="#products" class="btn btn-primary btn-lg">View Our Catch</a>
+        </div>
+    </header>
+
+    <section id="products" class="container my-5">
+        <h2 class="text-center mb-4">Our Top Sellers</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card fish-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Salmon">
+                    <div class="card-body">
+                        <h5 class="card-title">Atlantic Salmon</h5>
+                        <p class="card-text">Rich in Omega-3 and perfect for grilling.</p>
+                        <button class="btn btn-outline-dark w-100">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card fish-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Tuna">
+                    <div class="card-body">
+                        <h5 class="card-title">Yellowfin Tuna</h5>
+                        <p class="card-text">Sashimi grade, caught fresh daily.</p>
+                        <button class="btn btn-outline-dark w-100">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card fish-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1559737558-2f5ae8946702?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Shrimp">
+                    <div class="card-body">
+                        <h5 class="card-title">Wild Tiger Prawns</h5>
+                        <p class="card-text">Large, juicy, and ready for the pan.</p>
+                        <button class="btn btn-outline-dark w-100">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light py-4 border-top">
+        <div class="container text-center text-muted">
+            <p>&copy; 2026 The Fish Company. Stay Salty.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
