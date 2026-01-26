@@ -3,60 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fish Company | Elite Catch</title>
+    <title>THE FISH CO | Gaming & Content</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .hero-gradient { background: radial-gradient(circle at top right, #3b82f6, transparent), radial-gradient(circle at bottom left, #1d4ed8, transparent); }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@400;700&display=swap');
+        
+        body { 
+            background-color: #050505; 
+            color: white; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        .font-gaming { font-family: 'Orbitron', sans-serif; }
+
+        .glow-hop:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #1e3a8a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="text-2xl font-bold tracking-tighter text-blue-400">THE FISH CO.</div>
-        <div class="space-x-8 hidden md:flex text-sm uppercase tracking-widest opacity-80">
-            <a href="#" class="hover:text-blue-400 transition">Fleet</a>
-            <a href="#" class="hover:text-blue-400 transition">Market</a>
-            <a href="#" class="hover:text-blue-400 transition">Sustainability</a>
+    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto relative z-10">
+        <div class="font-gaming text-2xl font-black tracking-tighter italic text-blue-500 underline decoration-white">
+            FISH CO.
         </div>
-        <button class="bg-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-500 transition">Order Now</button>
+        <div class="hidden md:flex gap-8 font-bold text-sm uppercase">
+            <a href="#" class="hover:text-blue-400 transition">Videos</a>
+            <a href="#" class="hover:text-blue-400 transition">Live</a>
+            <a href="#" class="hover:text-blue-400 transition">Merch</a>
+        </div>
+        <a href="https://youtube.com" class="bg-red-600 px-5 py-2 rounded-lg font-bold hover:bg-red-500 flex items-center gap-2">
+            <i class="fab fa-youtube"></i> SUBSCRIBE
+        </a>
     </nav>
 
-    <section class="hero-gradient min-h-[80vh] flex items-center justify-center text-center px-4">
-        <div class="max-w-3xl">
-            <span class="bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Direct from the Atlantic</span>
-            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">The Purest Catch <br><span class="text-blue-500">On Earth.</span></h1>
-            <p class="text-xl text-slate-400 mb-10">We don't just sell fish. We manage a sustainable supply chain from the deep blue to your kitchen table.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-slate-200 transition">Browse Inventory</button>
-                <button class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">Watch Our Story</button>
+    <header class="animated-bg py-24 px-6 text-center border-b border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-gaming text-6xl md:text-8xl font-black mb-4 italic tracking-tight">
+                WE'RE JUST <span class="text-blue-500">BUILT</span> DIFFERENT.
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Official hub for The Fish Company. High-stakes gameplay, daily uploads, and absolutely zero actual fish.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-blue-600 px-8 py-4 rounded-full font-black text-lg glow-hop">JOIN THE SQUAD</button>
+                <button class="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full font-black text-lg hover:bg-white/20 transition">LATEST CLIP</button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="max-w-7xl mx-auto py-20 px-6">
+    <main class="max-w-7xl mx-auto py-20 px-6">
+        <h2 class="font-gaming text-3xl mb-10 border-l-4 border-blue-500 pl-4">LATEST DROPS</h2>
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass p-10 rounded-3xl text-center">
-                <div class="text-4xl font-bold mb-2">24h</div>
-                <div class="text-slate-400 uppercase text-xs tracking-widest">Dock to Door</div>
+            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
+                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80')"></div>
+                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">How we won the $10k Invitational</h3>
+                    <p class="text-slate-400 text-sm italic">240K Views • 2 days ago</p>
+                </div>
             </div>
-            <div class="glass p-10 rounded-3xl text-center border-blue-500/50">
-                <div class="text-4xl font-bold mb-2">100%</div>
-                <div class="text-slate-400 uppercase text-xs tracking-widest">Wild Caught</div>
+
+            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
+                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80')"></div>
+                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">The Fish Company vs. Everyone</h3>
+                    <p class="text-slate-400 text-sm italic">1.2M Views • 1 week ago</p>
+                </div>
             </div>
-            <div class="glass p-10 rounded-3xl text-center">
-                <div class="text-4xl font-bold mb-2">0</div>
-                <div class="text-slate-400 uppercase text-xs tracking-widest">Plastic Packaging</div>
+
+            <div class="bg-zinc-900 rounded-2xl overflow-hidden glow-hop cursor-pointer group">
+                <div class="aspect-video bg-zinc-800 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:scale-110 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80')"></div>
+                    <span class="z-10 bg-black/80 p-3 rounded-full text-blue-500">▶</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Setup Tour: The Reef 2026</h3>
+                    <p class="text-slate-400 text-sm italic">89K Views • 3 days ago</p>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer class="py-10 text-center text-slate-500 text-sm border-t border-white/5">
-        &copy; 2026 THE FISH COMPANY. ALL RIGHTS RESERVED.
+    <footer class="p-10 text-center border-t border-white/5 text-slate-600 uppercase tracking-widest text-xs font-bold">
+        &copy; 2026 The Fish Company // No Fish Involved.
     </footer>
 
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </body>
 </html>
