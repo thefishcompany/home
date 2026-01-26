@@ -32,6 +32,14 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        .pulse-text {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
     </style>
 </head>
 <body>
@@ -40,7 +48,7 @@
         <div class="font-gaming text-xl font-black italic text-blue-500 tracking-tighter">THE FISH COMPANY</div>
         <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-zinc-400">
             <a href="#videos" class="hover:text-blue-400 transition">Videos</a>
-            <a href="#about" class="hover:text-blue-400 transition">About</a>
+            <a href="#coming-soon" class="hover:text-blue-400 transition">Updates</a>
         </div>
         <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-6 py-2 rounded text-xs font-bold hover:bg-red-700 transition flex items-center gap-2 uppercase tracking-tighter">
             <i class="fab fa-youtube"></i> Subscribe
@@ -57,8 +65,8 @@
             </p>
             
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#about" class="bg-blue-600 px-10 py-4 rounded-xl font-black text-sm tracking-widest btn-glow uppercase">
-                    The Team
+                <a href="#coming-soon" class="bg-blue-600 px-10 py-4 rounded-xl font-black text-sm tracking-widest btn-glow uppercase">
+                    Upcoming
                 </a>
                 <a href="#videos" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-black text-sm tracking-widest hover:bg-white/20 transition uppercase">
                     Latest Drops
@@ -67,21 +75,16 @@
         </div>
     </header>
 
-    <section id="about" class="max-w-7xl mx-auto py-24 px-6">
-        <h2 class="font-gaming text-3xl mb-12 border-l-8 border-blue-600 pl-4 uppercase">The Team</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-zinc-900/50 p-10 rounded-3xl border border-white/5 text-center">
-                <div class="w-16 h-16 bg-blue-900/30 rounded-2xl mx-auto flex items-center justify-center font-gaming text-xl border border-blue-500/30 text-blue-400 italic">TFC</div>
+    <section id="coming-soon" class="max-w-7xl mx-auto py-32 px-6 text-center">
+        <div class="bg-zinc-900/40 p-16 rounded-[3rem] border border-blue-500/20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <i class="fas fa-clock text-9xl"></i>
             </div>
-            <div class="bg-zinc-900/50 p-10 rounded-3xl border border-white/5 text-center">
-                <div class="w-16 h-16 bg-blue-900/30 rounded-2xl mx-auto flex items-center justify-center font-gaming text-xl border border-blue-500/30 text-blue-400 italic">TFC</div>
-            </div>
-            <div class="bg-zinc-900/50 p-10 rounded-3xl border border-white/5 text-center">
-                <div class="w-16 h-16 bg-blue-900/30 rounded-2xl mx-auto flex items-center justify-center font-gaming text-xl border border-blue-500/30 text-blue-400 italic">TFC</div>
-            </div>
-            <div class="bg-zinc-900/50 p-10 rounded-3xl border border-white/5 text-center">
-                <div class="w-16 h-16 bg-blue-900/30 rounded-2xl mx-auto flex items-center justify-center font-gaming text-xl border border-blue-500/30 text-blue-400 italic">TFC</div>
-            </div>
+            <h2 class="font-gaming text-4xl md:text-5xl mb-6 uppercase tracking-tighter">Project <span class="text-blue-500">Omega</span></h2>
+            <p class="text-blue-400 font-gaming text-xl mb-8 pulse-text tracking-widest uppercase italic">Coming Soon</p>
+            <p class="text-zinc-400 max-w-xl mx-auto text-lg">
+                We are currently overhauling the Fish Co experience. Stay tuned for new roster reveals and tournament announcements.
+            </p>
         </div>
     </section>
 
