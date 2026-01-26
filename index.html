@@ -10,8 +10,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@400;700&display=swap');
         
         html { scroll-behavior: smooth; }
-        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .font-gaming { font-family: 'Orbitron', sans-serif; }
+
+        /* Responsive Text for Mobile */
+        .hero-title {
+            font-size: clamp(3rem, 15vw, 8rem);
+            line-height: 0.9;
+        }
 
         .btn-glow {
             transition: 0.3s;
@@ -19,7 +25,7 @@
         }
         .btn-glow:hover {
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .animated-bg {
@@ -44,62 +50,62 @@
 </head>
 <body>
 
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-black/80 backdrop-blur-md">
-        <div class="font-gaming text-xl font-black italic text-blue-500 tracking-tighter">THE FISH COMPANY</div>
-        <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-zinc-400">
+    <nav class="flex flex-col md:flex-row justify-between items-center p-4 md:p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-black/90 backdrop-blur-md gap-4">
+        <div class="font-gaming text-lg md:text-xl font-black italic text-blue-500 tracking-tighter uppercase">
+            THE FISH COMPANY
+        </div>
+        
+        <div class="flex items-center gap-6 font-bold text-[10px] md:text-xs uppercase tracking-widest text-zinc-400">
             <a href="#videos" class="hover:text-blue-400 transition">Videos</a>
             <a href="#coming-soon" class="hover:text-blue-400 transition">Updates</a>
+            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-4 py-2 rounded text-white hover:bg-red-700 transition flex items-center gap-2">
+                <i class="fab fa-youtube text-sm"></i> <span class="hidden xs:inline">SUB</span>
+            </a>
         </div>
-        <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-6 py-2 rounded text-xs font-bold hover:bg-red-700 transition flex items-center gap-2 uppercase tracking-tighter">
-            <i class="fab fa-youtube"></i> Subscribe
-        </a>
     </nav>
 
-    <header class="animated-bg py-32 px-6 text-center border-b border-white/5">
+    <header class="animated-bg py-20 md:py-32 px-6 text-center border-b border-white/5">
         <div class="max-w-4xl mx-auto">
-            <h1 class="font-gaming text-7xl md:text-9xl font-black mb-4 italic tracking-tighter leading-none uppercase">
+            <h1 class="font-gaming hero-title font-black mb-6 italic tracking-tighter uppercase">
                 FEAR <span class="text-blue-500">THE</span><br>SALMON
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 font-medium">
+            <p class="text-base md:text-xl text-slate-300 mb-10 font-medium px-4">
                 No fish. Just elite gameplay.
             </p>
             
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#coming-soon" class="bg-blue-600 px-10 py-4 rounded-xl font-black text-sm tracking-widest btn-glow uppercase">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 px-8">
+                <a href="#coming-soon" class="bg-blue-600 px-8 py-4 rounded-xl font-black text-xs md:text-sm tracking-widest btn-glow uppercase text-center">
                     Upcoming
                 </a>
-                <a href="#videos" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-black text-sm tracking-widest hover:bg-white/20 transition uppercase">
+                <a href="#videos" class="bg-white/10 border border-white/20 px-8 py-4 rounded-xl font-black text-xs md:text-sm tracking-widest hover:bg-white/20 transition uppercase text-center">
                     Latest Drops
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="coming-soon" class="max-w-7xl mx-auto py-32 px-6 text-center">
-        <div class="bg-zinc-900/40 p-16 rounded-[3rem] border border-blue-500/20 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
-                <i class="fas fa-clock text-9xl"></i>
-            </div>
-            <h2 class="font-gaming text-4xl md:text-5xl mb-6 uppercase tracking-tighter">Project <span class="text-blue-500">Omega</span></h2>
-            <p class="text-blue-400 font-gaming text-xl mb-8 pulse-text tracking-widest uppercase italic">Coming Soon</p>
-            <p class="text-zinc-400 max-w-xl mx-auto text-lg">
+    <section id="coming-soon" class="max-w-7xl mx-auto py-16 md:py-32 px-4 md:px-6 text-center">
+        <div class="bg-zinc-900/40 p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] border border-blue-500/20 relative overflow-hidden">
+            <h2 class="font-gaming text-3xl md:text-5xl mb-4 uppercase tracking-tighter">Project <span class="text-blue-500">Omega</span></h2>
+            <p class="text-blue-400 font-gaming text-sm md:text-xl mb-6 pulse-text tracking-widest uppercase italic">Coming Soon</p>
+            <p class="text-zinc-400 max-w-xl mx-auto text-sm md:text-lg leading-relaxed">
                 We are currently overhauling the Fish Co experience. Stay tuned for new roster reveals and tournament announcements.
             </p>
         </div>
     </section>
 
     <section id="videos" class="max-w-7xl mx-auto py-12 px-6">
-        <h2 class="font-gaming text-3xl mb-12 border-l-8 border-blue-600 pl-4 uppercase text-blue-500">Videos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-zinc-600">
-            <div class="aspect-video bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[10px] tracking-[0.2em]">Live Content Pending</div>
-            <div class="aspect-video bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[10px] tracking-[0.2em]">Live Content Pending</div>
-            <div class="aspect-video bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[10px] tracking-[0.2em]">Live Content Pending</div>
+        <h2 class="font-gaming text-2xl md:text-3xl mb-10 border-l-4 md:border-l-8 border-blue-600 pl-4 uppercase text-blue-500">Videos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center text-zinc-600">
+            <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[8px] md:text-[10px] tracking-[0.2em]">Live Content Pending</div>
+            <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[8px] md:text-[10px] tracking-[0.2em]">Live Content Pending</div>
+            <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center font-gaming uppercase text-[8px] md:text-[10px] tracking-[0.2em]">Live Content Pending</div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5">
-        <p class="font-gaming text-2xl mb-4 text-white/10 italic tracking-tighter">FISH CO.</p>
-        <p class="text-zinc-700 font-bold text-[10px] tracking-[0.4em] uppercase">&copy; 2026 THE FISH COMPANY</p>
+    <footer class="py-16 text-center border-t border-white/5">
+        <p class="font-gaming text-xl mb-4 text-white/10 italic tracking-tighter">FISH CO.</p>
+        <p class="text-zinc-700 font-bold text-[8px] md:text-[10px] tracking-[0.4em] uppercase">&copy; 2026 THE FISH COMPANY</p>
     </footer>
 
 </body>
