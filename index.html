@@ -61,11 +61,16 @@
             THE FISH COMPANY
         </div>
         
-        <div class="flex items-center gap-8 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400">
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400">
             <a href="#videos" class="hover:text-blue-500 transition">Media</a>
             <a href="#coming-soon" class="hover:text-blue-500 transition">Drops</a>
-            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-5 py-2 rounded-sm text-white hover:bg-red-700 transition flex items-center gap-2">
-                <i class="fab fa-youtube"></i> SUBSCRIBE
+            
+            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-red-600 px-4 py-2 rounded-sm text-white hover:bg-red-700 transition flex items-center gap-2">
+                <i class="fab fa-youtube"></i> SUB 01
+            </a>
+
+            <a href="https://youtube.com/@english-salmon?sub_confirmation=1" target="_blank" class="bg-zinc-800 border border-white/10 px-4 py-2 rounded-sm text-white hover:bg-zinc-700 transition flex items-center gap-2">
+                <i class="fab fa-youtube text-red-500"></i> SUB 02
             </a>
         </div>
     </nav>
@@ -158,20 +163,18 @@
     </footer>
 
     <script>
-        // SET YOUR TARGET DATE HERE
+        // TARGET DATE: Feb 20, 2026 at 6:00 PM
         const targetDate = new Date("February 20, 2026 18:00:00").getTime();
 
         const countdown = setInterval(function() {
             const now = new Date().getTime();
             const distance = targetDate - now;
 
-            // Time calculations
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Update the display
             if (document.getElementById("days")) {
                 document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
                 document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
@@ -179,7 +182,6 @@
                 document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
             }
 
-            // If countdown is finished
             if (distance < 0) {
                 clearInterval(countdown);
                 document.getElementById("countdown-container").innerHTML = `
@@ -189,6 +191,5 @@
             }
         }, 1000);
     </script>
-
 </body>
 </html>
